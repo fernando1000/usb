@@ -54,14 +54,7 @@ public class Dao extends BancoSQLiteOpenHelper {
 		sQLiteDatabase.execSQL(Query.criaInsert_final(objeto));
 		sQLiteDatabase.close();
 	}
-	
-	public <T> List<T> listaTodaTabela(Class<T> classe) {
-
-		String querySelect = "select * from " + classe.getSimpleName();
-
-		return devolveListaBaseadoEmSQL_final(classe, querySelect);
-	}
-	
+		
 	public <T> List<T> listaTodaTabela(Class<T> classe, Object... parametros) {
 
 		String select = "select * from " + classe.getSimpleName();
